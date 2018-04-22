@@ -603,7 +603,7 @@ static CMS_Menu saCmsMenuCommence = {
 };
 
 static OSD_Entry saCmsMenuFreqModeEntries[] = {
-    { "- SMARTAUDIO -", OME_Label, NULL, NULL, 0 },
+    { "- SA LITE -", OME_Label, NULL, NULL, 0 },
 
     { "",       OME_Label,   NULL,                                     saCmsStatusString,  DYNAMIC },
     { "FREQ",   OME_Submenu, (CMSEntryFuncPtr)saCmsUserFreqGetString,  &saCmsMenuUserFreq, OPTSTRING },
@@ -617,7 +617,7 @@ static OSD_Entry saCmsMenuFreqModeEntries[] = {
 
 static OSD_Entry saCmsMenuChanModeEntries[] =
 {
-    { "- SMARTAUDIO -", OME_Label, NULL, NULL, 0 },
+    { "- SA LITE -", OME_Label, NULL, NULL, 0 },
 
     { "",       OME_Label,   NULL,                   saCmsStatusString,  DYNAMIC },
     { "BAND",   OME_TAB,     saCmsConfigBandByGvar,  &saCmsEntBand,      0 },
@@ -633,7 +633,7 @@ static OSD_Entry saCmsMenuChanModeEntries[] =
 
 static OSD_Entry saCmsMenuOfflineEntries[] =
 {
-    { "- VTX SMARTAUDIO -", OME_Label, NULL, NULL, 0 },
+    { "- VTX SA LITE -", OME_Label, NULL, NULL, 0 },
 
     { "",      OME_Label,   NULL,          saCmsStatusString, DYNAMIC },
     { "STATX", OME_Submenu, cmsMenuChange, &saCmsMenuStats,   0 },
