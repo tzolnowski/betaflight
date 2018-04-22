@@ -65,7 +65,7 @@ static serialPort_t *smartAudioSerialPort = NULL;
 
 #if defined(USE_CMS) || defined(USE_VTX_COMMON)
 const char * const saPowerNames[VTX_SMARTAUDIO_POWER_COUNT+1] = {
-    "---", "25 ", "200", "500", "800",
+    "---", "25 ", "50 "
 };
 #endif
 
@@ -121,10 +121,8 @@ smartAudioStat_t saStat = {
 };
 
 saPowerTable_t saPowerTable[VTX_SMARTAUDIO_POWER_COUNT] = {
-    {  25,   7,   0 },
-    { 200,  16,   1 },
-    { 500,  25,   2 },
-    { 800,  40,   3 },
+    { 25,   7,   0 },
+    { 50,  16,   1 },
 };
 
 // Last received device ('hard') states
@@ -666,7 +664,7 @@ bool vtxSmartAudioInit(void)
 
     serialPortConfig_t *portConfig = findSerialPortConfig(FUNCTION_VTX_SMARTAUDIO);
     if (portConfig) {
-        portOptions_e portOptions = SERIAL_STOPBITS_2 | SERIAL_BIDIR_NOPULL;
+        portOptions_e portOptions = SERIAL_STOPBITS_2 | SERIAL_BIDIR_PULL_DOWN;
 #if defined(USE_VTX_COMMON)
         portOptions = portOptions | (vtxConfig()->halfDuplex ? SERIAL_BIDIR | SERIAL_BIDIR_PP : SERIAL_UNIDIR);
 #else
